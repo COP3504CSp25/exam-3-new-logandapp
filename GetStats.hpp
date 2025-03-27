@@ -12,12 +12,32 @@ public:
         newNode->next = head;
         head = newNode;
     }
-
-    // Write your function here
-    LinkedList reverseList() const {
-        // implement your function here!
-    }
     
+    [[nodiscard]] int* getStats() const
+    {
+        auto out = new int[3];
+
+        Node* current = this->head;
+
+        int total = 0;
+        int len = 0;
+        int min = 0;
+        int max = 0;
+
+        while (current != nullptr)
+        {
+            total += current->data;
+            min = current->data < min ? current->data : min;
+            max = current->data > max ? current->data : max;
+            ++len;
+
+            current = current->next;
+        }
+
+        out[0] = min;
+        out[1] = max;
+        out[2] = total / len;
+    }
 
 private:
     Node* head = nullptr;

@@ -14,8 +14,25 @@ public:
         head = newNode;
     }
     
-    //write your solution here!
- 
+    LinkedList reverseList() const 
+    {
+        LinkedList out{};
+        Node* current = this->head;
+        while (current != nullptr)
+        {
+            if (out.head != nullptr)
+            {
+                out.addHead(current->data);
+            }
+            else
+            {
+                out.head = new Node;
+                out.head->data = current->data;
+                out.head->next = nullptr;
+            }
+        }
+        return out;
+    }
 
     Node* head = nullptr;
 };
