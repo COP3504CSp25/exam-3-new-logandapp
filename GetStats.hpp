@@ -37,6 +37,8 @@ public:
         out[0] = min;
         out[1] = max;
         out[2] = total / len;
+
+        return out;
     }
 
 private:
