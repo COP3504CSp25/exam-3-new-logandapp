@@ -24,8 +24,8 @@ public:
 
         int total = 0;
         int len = 0;
-        int min = 0;
-        int max = INT_MAX;
+        int min = INT_MAX;
+        int max = 0;
 
         while (current != nullptr)
         {
