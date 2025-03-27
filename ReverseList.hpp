@@ -30,6 +30,7 @@ public:
                 out.head->data = current->data;
                 out.head->next = nullptr;
             }
+            current = current->next;
         }
         return out;
     }
