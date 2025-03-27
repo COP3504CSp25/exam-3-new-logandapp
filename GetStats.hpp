@@ -1,4 +1,7 @@
 #pragma once
+
+#include <climits>
+
 struct Node {
     int data;
     Node* next;
@@ -22,7 +25,7 @@ public:
         int total = 0;
         int len = 0;
         int min = 0;
-        int max = ~0;
+        int max = INT_MAX;
 
         while (current != nullptr)
         {
@@ -34,7 +37,7 @@ public:
             current = current->next;
         }
 
-        if (min == ~0) min = 0;
+        if (min == INT_MAX) min = 0;
         out[0] = min;
         out[1] = max;
         if (len != 0) out[2] = total / len;
