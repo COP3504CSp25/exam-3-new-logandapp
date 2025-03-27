@@ -22,7 +22,7 @@ public:
         int total = 0;
         int len = 0;
         int min = 0;
-        int max = INT_MAX;
+        int max = ~0;
 
         while (current != nullptr)
         {
@@ -34,7 +34,7 @@ public:
             current = current->next;
         }
 
-        if (min == INT_MAX) min = 0;
+        if (min == ~0) min = 0;
         out[0] = min;
         out[1] = max;
         if (len != 0) out[2] = total / len;
